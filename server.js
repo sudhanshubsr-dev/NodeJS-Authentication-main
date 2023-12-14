@@ -5,6 +5,8 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 
+const dotenv = require('dotenv');
+dotenv.config();
 const app = express();
 
 //------------ Passport Configuration ------------//
@@ -25,7 +27,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
 //------------ Bodyparser Configuration ------------//
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 
 //------------ Express session Configuration ------------//
 app.use(
